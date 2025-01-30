@@ -1,4 +1,4 @@
-export async function FooterComponent() {
+export function FooterComponent() {
     return (
         <footer className="h-[150px] bg-zinc-900">
             <div title="MenuButtons" className="flex h-full">

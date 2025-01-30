@@ -1,5 +1,4 @@
-
-export async function HeaderComponent() {
+export function HeaderComponent() {
     return (
         <nav className="flex h-[80px] w-full sticky top-0 bg-zinc-900">
             <div title="MenuButtons" className="flex basis-11/12">
