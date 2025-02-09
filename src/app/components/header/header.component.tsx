@@ -1,6 +1,7 @@
 import { useState } from "react";
-import imagePerfilTeste from "../../public/default-profile.png";
+import imagePerfilTeste from "../../../public/default-profile.png";
 import Image from "next/image";
+import { HeaderButton } from "./headerButton.component";
 
 export function HeaderComponent() {
     const [togglePopover, setTogglePopover] = useState<boolean>(false);
@@ -9,8 +10,8 @@ export function HeaderComponent() {
     return (
         <nav className="flex h-[80px] w-full sticky top-0 bg-zinc-900">
             <div title="MenuButtons" className="flex basis-11/12">
-                <button title="Home" className=" bg-red-950 w-[180px]">HOME</button>
-                <button title="Mapa" className=" bg-amber-950 w-[180px]">MAPA</button>
+                <HeaderButton label="Home" href="/" />
+                <HeaderButton label="Mapa" href="/" />
             </div>
             <div title="LoginButton" className="basis-1/12 min-w-[100px] size-full">
                 {!isLogged ? (
@@ -19,7 +20,7 @@ export function HeaderComponent() {
                     </button>
                 ) : (
                     <button className="w-full h-full flex justify-center items-center" onClick={() => setTogglePopover(!togglePopover)}>
-                        <Image className="rounded-full" src={imagePerfilTeste.src} alt="" width={75} height={75} />
+                        <Image className="rounded-full" src={imagePerfilTeste.src} alt="" width={70} height={70} />
                     </button>
                 )}
                 {(togglePopover && isLogged) &&  (
