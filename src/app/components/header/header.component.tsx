@@ -2,13 +2,14 @@ import { useState } from "react";
 import imagePerfilTeste from "../../../public/default-profile.png";
 import Image from "next/image";
 import { HeaderButton } from "./headerButton.component";
+import Link from "next/link";
 
 export function HeaderComponent() {
     const [togglePopover, setTogglePopover] = useState<boolean>(false);
-    const [isLogged, setIsLogged] = useState<boolean>(false);
+    const [isLogged, setIsLogged] = useState<boolean>(true);
 
     return (
-        <nav className="flex h-[80px] w-full sticky top-0 bg-zinc-900">
+        <nav className="flex h-[80px] w-full sticky top-0 bg-zinc-900 z-10">
             <div title="MenuButtons" className="flex basis-11/12">
                 <HeaderButton label="Home" href="/" />
                 <HeaderButton label="Mapa" href="/" />
@@ -24,9 +25,9 @@ export function HeaderComponent() {
                     </button>
                 )}
                 {(togglePopover && isLogged) &&  (
-                    <div className='bg-zinc-900 flex-col'>
-                        <div className="text-center pt-[10px] text-[18px] h-[40px]">Perfl</div>
-                        <div className="text-center pt-[10px] text-[18px] h-[40px]">Sair</div>
+                    <div className='bg-zinc-900 flex-col border-t-2 border-red-900'>
+                        <Link href="/perfil" className="text-center text-[18px] h-[40px] flex justify-center items-center">Perfil</Link>
+                        <div className="text-center text-[18px] h-[40px] flex justify-center items-center">Sair</div>
                     </div>
                 )}
             </div>
